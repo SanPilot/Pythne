@@ -7,8 +7,8 @@ function getParameterByName(name) {
 var lastOverride = false;
 $(document).ready(function() {
 	$("#logo").on("click", function() {
-			$("#searchBar").focus();
-			revertSearch();	
+		$("#searchBar").focus();
+		revertSearch();	
 	});
 	$(document).on("click", function(event) {
 		if (!$(event.target).closest('#bar').length) {
@@ -22,8 +22,8 @@ $(document).ready(function() {
 		search(getParameterByName("q"));
 	}
 	$("#searchBar").on("focus", function() {
-    $("#searchBar").css("width","670px");
-    $("#bar").css("width","670px");
+		$("#bar").css("width","670px");
+		$("#searchBar").css("width","550px");
 	});
 	$("#cover").css("opacity","0");
 	setTimeout(function() {

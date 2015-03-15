@@ -24,7 +24,7 @@
 				box-shadow: -1px 1px 2px rgba(50, 50, 50, 0.3);
 				position: fixed;
 				transition: box-shadow 0.3s;
-				/*transition: width 0.1s*/
+				transition: width 0.1s;
 			}
 			#bar:hover {
 				box-shadow: -1px 1px 2px rgba(50, 50, 50, 0.1);
@@ -48,7 +48,7 @@
 				border: none;
 				width: 550px;
 				float: left;
-				/*transition: width 0.1s*/
+				transition: width 0.1s;
 			}
 			#logo {
 				float: left;
