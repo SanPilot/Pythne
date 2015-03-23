@@ -66,6 +66,9 @@ function search(query) {
 			window.history.pushState("", "", "/?q="+encodeURIComponent(query));
 			var resTime = new Date().getTime();
 			$.ajax("/search/?q="+encodeURIComponent(query),{
+				beforeSend: function() {
+					$("#go").css("background-image", "url(/static/ui/LoadingIcon.png)").css("background-size", "22px");
+				},
 				success: function(response) {
 					resTime = new Date().getTime() - resTime;
 					resTime = resTime = resTime / 1000;

@@ -65,10 +65,10 @@
 				border-radius: 0px;
 				background-color: #5C93F7;
 				border: none;
-				background-image: url('/static/ui/GoArrow.png');
+				background-image: url('/static/ui/GoIcons.png');
 				background-repeat: no-repeat;
 				background-size: 13px;
-				background-position: center center;
+				background-position: center -22;
 				transition: background-color 0.4s;
 			}
 			#go:hover {
