@@ -6,6 +6,8 @@ function getParameterByName(name) {
 }
 var lastOverride = false;
 $(document).ready(function() {
+	var loadingicon = new Image();
+	loadingicon.src = "/static/ui/LoadingIcon.png";
 	$("#logo").on("click", function() {
 		$("#searchBar").focus();
 		revertSearch();	
