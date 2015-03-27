@@ -79,7 +79,7 @@ function search(query) {
 			window.history.pushState("", "", "/?q="+encodeURIComponent(query));
 			var resTime = new Date().getTime();
 			$.ajax("/search/?q="+encodeURIComponent(query),{
-				timeout: 1000;
+				timeout: 1000,
 				beforeSend: function() {
 					$("#go").css("background-image", "url(/static/ui/LoadingIcon.png)")
 						.css("background-size", "22px");
