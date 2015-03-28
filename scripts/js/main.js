@@ -105,6 +105,7 @@ function search(query) {
 				console.log("Newest!");
 			}
 		} else {
+			removeResults();
 			$("#resultList").html("Your query is too long!");
 		}
 	} else {
