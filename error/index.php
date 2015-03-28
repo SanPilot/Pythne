@@ -52,7 +52,7 @@ $error = $errors[$id];
 				color: #F4F4F4;
 			}
 			#content {
-				margin-left: 323px;
+				margin: auto;
 				width: 692px;
 			}
 			#outer {
@@ -75,7 +75,7 @@ $error = $errors[$id];
 				width: 100%;
 				background-color: #D8191C;
 				opacity: 1;
-				transition: opacity .8s;
+				transition: opacity 0.8s;
 			}
 		</style>
 		<?php include "../scripts/php/clippings/header.php"; ?>
