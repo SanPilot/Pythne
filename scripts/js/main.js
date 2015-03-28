@@ -7,7 +7,9 @@ function escapeHtml(text) {
 		"'": '&#039;'
 	};
 
-	return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+	return text.replace(/[&<>"']/g, function(m) {
+		return map[m];
+	});
 }
 function getParameterByName(name) {
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -73,34 +75,38 @@ if(!!getParameterByName("q")) {
 }
 function search(query) {
 	if(!!query) {
-		if(query !== autolast || lastOverride) {
-			prepSearch();
-			document.title = query+" - Pythne Search";
-			window.history.pushState("", "", "/?q="+encodeURIComponent(query));
-			var resTime = new Date().getTime();
-			$.ajax("/search/?q="+encodeURIComponent(query),{
-				timeout: 1000,
-				beforeSend: function() {
-					$("#go").css("background-image", "url(/static/ui/LoadingIcon.png)")
-						.css("background-size", "22px");
-				},
-				success: function(response) {
-					resTime = new Date().getTime() - resTime;
-					resTime = resTime = resTime / 1000;
-					drawResults(query,response,resTime);
-				},
-				error: function() {
-					$("#resultList").html("An error occurred!");
-				},
-				complete: function() {
-					$("#go").css("background-image", "url(/static/ui/GoArrow.png)")
-						.css("background-size", "13px");
-				}
-			});
-			autolast = query;
-			lastOverride = false;
+		if(query.length < 100) {
+			if(query !== autolast || lastOverride) {
+				prepSearch();
+				document.title = query+" - Pythne Search";
+				window.history.pushState("", "", "/?q="+encodeURIComponent(query));
+				var resTime = new Date().getTime();
+				$.ajax("/search/?q="+encodeURIComponent(query),{
+					timeout: 3000,
+					beforeSend: function() {
+						$("#go").css("background-image", "url(/static/ui/LoadingIcon.png)")
+							.css("background-size", "22px");
+					},
+					success: function(response) {
+						resTime = new Date().getTime() - resTime;
+						resTime = resTime = resTime / 1000;
+						drawResults(query,response,resTime);
+					},
+					error: function() {
+						$("#resultList").html("An error occurred!");
+					},
+					complete: function() {
+						$("#go").css("background-image", "url(/static/ui/GoArrow.png)")
+							.css("background-size", "13px");
+					}
+				});
+				autolast = query;
+				lastOverride = false;
+			} else {
+				revertSearch();
+			}
+		} else {
+			$("#resultList").html("Your query is too long!");
 		}
-	} else {
-		revertSearch();
 	}
 }
