@@ -102,6 +102,7 @@ function search(query) {
 				});
 				autolast = query;
 				lastOverride = false;
+				console.log("Newest!");
 			}
 		} else {
 			removeResults();
