@@ -79,6 +79,7 @@ $error = $errors[$id];
 			}
 		</style>
 		<?php include "../scripts/php/clippings/header.php"; ?>
+		<meta name="viewport" content="user-scalable=no, initial-scale=0.4, maximum-scale=0.4, minimum-scale=0.4, width=device-width, height=device-height, target-densitydpi=device-dpi">
 	</head>
 	<body>
 		<div id="cover"></div>
