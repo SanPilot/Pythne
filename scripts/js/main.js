@@ -102,11 +102,12 @@ function search(query) {
 				});
 				autolast = query;
 				lastOverride = false;
-			} else {
-				revertSearch();
+				console.log("Newest!");
 			}
 		} else {
 			$("#resultList").html("Your query is too long!");
 		}
+	} else {
+		revertSearch();
 	}
 }
