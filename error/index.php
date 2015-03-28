@@ -10,7 +10,7 @@ $errors = array(
 	),
 	404 => array(
 		"Not Found",
-		"Sorry, the treasures you were looking for don't exist!"
+		"Sorry, there's no treasure here!"
 	),
 	403 => array(
 		"Forbidden",
@@ -79,7 +79,7 @@ $error = $errors[$id];
 			}
 		</style>
 		<?php include "../scripts/php/clippings/header.php"; ?>
-		<meta name="viewport" content="user-scalable=no, initial-scale=0.4, maximum-scale=0.4, minimum-scale=0.4, width=device-width, height=device-height, target-densitydpi=device-dpi">
+		<meta name="viewport" content="user-scalable=no, initial-scale=0.4, maximum-scale=0.4, minimum-scale=0.4, width=device-width, height=device-height">
 	</head>
 	<body>
 		<div id="cover"></div>
@@ -106,7 +106,11 @@ $error = $errors[$id];
 				setTimeout(function() {
 					document.getElementById("cover").style.display = "none";
 				}, 800);
-			};
+			}
+			window.onbeforeunload = function() {
+				document.getElementById("cover").style.display = "block";
+				document.getElementById("cover").style.opacity = 1;
+			}
 		</script>
 	</body>
 </html>
