@@ -1,0 +1,93 @@
+<?php
+$id = $_GET['id'];
+if($id != 500 && $id != 404 && $id != 403 && $id != 401 && $id != 400) {
+	$id = 404;
+}
+$errors = array(
+	500 => array(
+		"Server Error",
+		"Our servers broke down. Luckily, it's not your fault!"
+	),
+	404 => array(
+		"Not Found",
+		"Sorry, the treasures you were looking for don't exist!"
+	),
+	403 => array(
+		"Forbidden",
+		"You shall not pass!"
+	),
+	401 => array(
+		"Unauthorized",
+		"The username or password you entered don't seem to work!"
+	),
+	400 => array(
+		"Bad Request",
+		"What evil place are you trying to visit?"
+	),
+);
+$error = $errors[$id];
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			<?php echo $error[0]; ?>
+		</title>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			body,html {
+				margin: 0px;
+				height: 90%;
+				background-color: #D8191C;
+				color: #FFFFFF;
+				font-family: Source Sans Pro;
+			}
+			#error {
+				font-size: 70px;
+				letter-spacing: 4px;
+				font-weight: bold;
+			}
+			#details {
+				font-size: 35px;
+				color: #F4F4F4;
+			}
+			#content {
+				margin-left: 323px;
+				width: 692px;
+			}
+			#outer {
+				display: table;
+				height: 100%;
+				width: 100%;
+			}
+			#middle {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			#logo {
+				margin-right: 30px;
+				float: left;
+			}
+		</style>
+		<?php include "../scripts/php/clippings/header.php"; ?>
+	</head>
+	<body>
+		<div id="outer">
+			<div id="middle">
+				<div id="content">
+					<div id="logo">
+						<a href="/">
+							<img src="/static/logos/Pythne%20Logo%20192.png">
+						</a>
+					</div>
+					<div id="error">
+						<?php echo $error[0]; ?>
+					</div>
+					<div id="details">
+						<?php echo $error[1]; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
