@@ -68,10 +68,20 @@ $error = $errors[$id];
 				margin-right: 30px;
 				float: left;
 			}
+			#cover {
+				position: fixed;
+				z-index: 999;
+				height: 100%;
+				width: 100%;
+				background-color: #D8191C;
+				opacity: 1;
+				transition: opacity .8s;
+			}
 		</style>
 		<?php include "../scripts/php/clippings/header.php"; ?>
 	</head>
 	<body>
+		<div id="cover"></div>
 		<div id="outer">
 			<div id="middle">
 				<div id="content">
@@ -89,5 +99,13 @@ $error = $errors[$id];
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("cover").style.opacity = 0;
+				setTimeout(function() {
+					document.getElementById("cover").style.display = "none";
+				}, 800);
+			};
+		</script>
 	</body>
 </html>
