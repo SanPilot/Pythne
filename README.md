@@ -1,4 +1,5 @@
-![](static/logos/Pythne%20Logo%20192.png) # Pythne
+![](static/logos/Pythne%20Logo%20192.png)
+# Pythne
 Official GitHub repository for the work in progress seach engine, Pythne.
 # Licence
 The MIT License (MIT)
