@@ -1,6 +1,10 @@
 ![](static/logos/Pythne%20Logo%20192.png)
 # Pythne
 Official GitHub repository for the work in progress seach engine, Pythne.
+
+#On the Web
+You can find a live version of Pythne at https://newthne.pythne.tk
+
 # Licence
 The MIT License (MIT)
 
@@ -23,6 +27,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-#On the Web
-You can find a live version of Pythne at https://newthne.pythne.tk
