@@ -107,7 +107,7 @@
 		<div id="cover"></div>
 		<div id="wrapper">
 			<div id="bar">
-				<form method="get" onsubmit="search(document.getElementById('searchBar').value); return false;">
+				<form method="get" onsubmit="search(document.getElementById('searchBar').value,1); return false;">
 					<div id="logo"></div><input type="text" id="searchBar" name="q" placeholder="Search..." autocomplete="off" autofocus><input type="submit" id="go" value="">
 				</form>
 			</div>
