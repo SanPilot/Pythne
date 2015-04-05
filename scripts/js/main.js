@@ -95,7 +95,7 @@ function search(query, attempt) {
 						},
 						error: function() {
 							$("#resultList").html("An error occurred!");
-							search(query,++attempt)
+							search(query,++attempt);
 						},
 						complete: function() {
 							$("#go").css("background-image", "url(/static/ui/GoArrow.png)")
